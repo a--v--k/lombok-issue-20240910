@@ -1,1 +1,13 @@
 # lombok-issue-20240910
+
+This project contains examples for Lombok issue related to missed nullability checks in annotated java record classes.
+
+The following table illustrates the difference in behaviour of generated constructors for data classes and records annotated with different nullability annotations:
+
+| Annotations           | Data class                                                                                                                                    | Record                                                                                                                                  | 
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| Findbug               | [**DataClassWithFindbugsAnnotations  [+]**](src/main/java/org/avk/lombok/issue/annotated/by/findbugs/DataClassWithFindbugsAnnotations.java)   | [**RecordWithFindbugsAnnotations  [-]**](src/main/java/org/avk/lombok/issue/annotated/by/findbugs/RecordWithFindbugsAnnotations.java)   |
+| Jakarta validation    | [**DataClassWithJakartaAnnotations   [-]**](src/main/java/org/avk/lombok/issue/annotated/by/jakarta/DataClassWithJakartaAnnotations.java)     | [**RecordWithJakartaAnnotations   [-]**](src/main/java/org/avk/lombok/issue/annotated/by/jakarta/RecordWithJakartaAnnotations.java)     |
+| Jetbrains annotations | [**DataClassWithJetbrainsAnnotations [+]**](src/main/java/org/avk/lombok/issue/annotated/by/jetbrains/DataClassWithJetbrainsAnnotations.java) | [**RecordWithJetbrainsAnnotations [-]**](src/main/java/org/avk/lombok/issue/annotated/by/jetbrains/RecordWithJetbrainsAnnotations.java) |
+| Lombok                | [**DataClassWithLombokAnnotations    [+]**](src/main/java/org/avk/lombok/issue/annotated/by/lombok/DataClassWithLombokAnnotations.java)       | [**RecordWithLombokAnnotations    [+]**](src/main/java/org/avk/lombok/issue/annotated/by/lombok/RecordWithLombokAnnotations.java)       |
+| Spring                | [**DataClassWithSpringAnnotations    [+]**](src/main/java/org/avk/lombok/issue/annotated/by/spring/DataClassWithSpringAnnotations.java)       | [**RecordWithSpringAnnotations    [-]**](src/main/java/org/avk/lombok/issue/annotated/by/spring/RecordWithSpringAnnotations.java)       |

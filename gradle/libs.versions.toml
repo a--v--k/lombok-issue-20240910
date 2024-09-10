@@ -1,0 +1,8 @@
+[libraries]
+jetbrains-annotations = { module = "org.jetbrains:annotations", version = "24.0.1" }
+spring-core = { module = "org.springframework:spring-core", version = "6.1.12" }
+jakarta-validation = { module = "jakarta.validation:jakarta.validation-api", version = "3.0.2" }
+findbugs = { module = "com.google.code.findbugs:jsr305", version = "3.0.2" }
+
+[plugins]
+lombok = { id = "io.freefair.lombok", version = "8.10" }
